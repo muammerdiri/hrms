@@ -1,6 +1,7 @@
 package com.muammerdiri.hrms.webApi.api;
 
 import com.muammerdiri.hrms.business.abstracts.EmployeeService;
+import com.muammerdiri.hrms.business.responses.GetAllEmployeeResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.core.utilities.results.SuccessDataResult;
@@ -24,7 +25,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/getall")
-    public DataResult<List<Employee>> getAll(){
+    public DataResult<List<GetAllEmployeeResponse>> getAll(){
         return employeeService.getAll();
     }
 
