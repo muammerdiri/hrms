@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class GetAllEmployerResponse {
     private int id;
+    private String email;
     private String companyName;
     private String website;
     private String phoneNumber;
