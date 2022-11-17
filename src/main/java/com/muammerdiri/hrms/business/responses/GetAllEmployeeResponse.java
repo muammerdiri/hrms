@@ -12,7 +12,7 @@ public class GetAllEmployeeResponse {
 
     private String firstName;
 
-    private String LastName;
+    private String lastName;
 
     private int dateOfBirth;
 

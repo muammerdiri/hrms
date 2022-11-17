@@ -37,8 +37,8 @@ public class EmployeeManager implements EmployeeService {
 
             getAllEmployeeResponse.setId(employee.getId());
             getAllEmployeeResponse.setEmail(employee.getUser().getEmail());
-            getAllEmployeeResponse.setLastName(employee.getLastName());
             getAllEmployeeResponse.setFirstName(employee.getFirstName());
+            getAllEmployeeResponse.setLastName(employee.getLastName());
             getAllEmployeeResponse.setDateOfBirth(employee.getDateOfBirth());
             getAllEmployeeResponse.setIdentityNumber(employee.getIdentityNumber());
 
