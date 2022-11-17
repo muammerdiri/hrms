@@ -1,0 +1,48 @@
+package com.muammerdiri.hrms.entites.concretes;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.muammerdiri.hrms.core.concretes.User;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.UniqueElements;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Table(name="employers")
+@EqualsAndHashCode(callSuper=false)
+public class Employer  {
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@NotNull
+	@NotBlank
+	@Column(name = "company_name")
+	private String companyName;
+
+	@NotNull
+	@Column(name="website")
+	private String website;
+	
+	@NotNull
+	@UniqueElements
+	@Column(name="phone_number")
+	private String phoneNumber;
+	
+	@ManyToOne
+    @JoinColumn(name = "user_id")
+	private User user;
+	
+	
+	
+}
