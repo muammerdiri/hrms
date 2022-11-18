@@ -31,6 +31,11 @@ public class JobAdvertisement {
     @Column(name = "last_date")
     private LocalDate lastDate;
 
+    @Column(name = "release_date")
+    private LocalDate releaseDate;
+
+    @Column(name="status")
+    private boolean status;
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
