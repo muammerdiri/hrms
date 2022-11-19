@@ -26,6 +26,9 @@ public class JobPosition {
 
 	@OneToMany(mappedBy = "jobPosition")
 	private Set<JobAdvertisement> jobAdvertisement;
+
+	@OneToMany(mappedBy = "jobPosition")
+	private Set<JobExperience> jobExperience;
 	
 	
 }
