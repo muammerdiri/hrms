@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -22,5 +23,8 @@ public class Language {
 
     @Column(name = "level")
     private short level;
+
+    @OneToMany(mappedBy = "language")
+    private Set<Cv> cv;
 
 }

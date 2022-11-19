@@ -53,4 +53,7 @@ public class Employee {
     @JoinColumn(name = "user_id")
 	private User user;
 
+	@OneToOne(mappedBy = "employee")
+	private Cv cv;
+
 }
