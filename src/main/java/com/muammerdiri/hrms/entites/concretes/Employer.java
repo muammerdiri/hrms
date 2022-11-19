@@ -6,11 +6,12 @@ import javax.validation.constraints.NotNull;
 
 import com.muammerdiri.hrms.core.concretes.User;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
+
+import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @NoArgsConstructor
@@ -38,11 +39,15 @@ public class Employer  {
 	@UniqueElements
 	@Column(name="phone_number")
 	private String phoneNumber;
-	
+
+
 	@ManyToOne
     @JoinColumn(name = "user_id")
 	private User user;
-	
-	
-	
+
+
+
+
+
+
 }
