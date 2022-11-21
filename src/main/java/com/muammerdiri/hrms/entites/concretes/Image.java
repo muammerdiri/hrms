@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Cvs")
+@Table(name = "images")
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +27,10 @@ public class Image {
     @Column(name = "created_date")
     private LocalDate createdDate;
 
-    @OneToOne(mappedBy = "image")
-    private Cv cv;
+    @OneToMany(mappedBy = "image")
+    private Set<Cv> cv;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }

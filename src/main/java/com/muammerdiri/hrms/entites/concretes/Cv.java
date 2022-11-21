@@ -11,7 +11,7 @@ import java.awt.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Cvs")
+@Table(name = "cvs")
 public class Cv {
 
     @Id
@@ -27,9 +27,6 @@ public class Cv {
     @Column(name = "github_account")
     private String githubAccount;
 
-    @OneToOne
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "school_id")
@@ -47,8 +44,14 @@ public class Cv {
     @JoinColumn(name = "programming_technology_id")
     private  ProgrammingTechnology programmingTechnology;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "image_id")
     private Image image;
 
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
 }
+

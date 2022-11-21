@@ -27,4 +27,8 @@ public class Language {
     @OneToMany(mappedBy = "language")
     private Set<Cv> cv;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
 }

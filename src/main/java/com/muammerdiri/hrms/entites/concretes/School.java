@@ -42,6 +42,9 @@ public class School {
     @OneToMany(mappedBy = "school")
     private Set<Cv> cv;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
 
 }

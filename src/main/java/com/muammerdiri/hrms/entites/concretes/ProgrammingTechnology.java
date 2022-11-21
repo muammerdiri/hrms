@@ -26,5 +26,9 @@ public class ProgrammingTechnology {
     @OneToMany(mappedBy = "programmingTechnology")
     private Set<Cv> cv;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
 
 }

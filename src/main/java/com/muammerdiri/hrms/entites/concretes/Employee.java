@@ -1,15 +1,6 @@
 package com.muammerdiri.hrms.entites.concretes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import com.muammerdiri.hrms.core.concretes.User;
@@ -19,6 +10,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.UniqueElements;
+
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -53,7 +46,27 @@ public class Employee {
     @JoinColumn(name = "user_id")
 	private User user;
 
-	@OneToOne(mappedBy = "employee")
-	private Cv cv;
+	@OneToMany(mappedBy = "employee")
+	private Set<Cv> cv;
+
+	@OneToMany(mappedBy = "employee")
+	private Set<School> school;
+
+	@OneToMany(mappedBy = "employee")
+	private  Set<ProgrammingTechnology> programmingTechnology;
+
+	@OneToMany(mappedBy = "employee")
+	private Set<Language> language;
+
+	@OneToMany(mappedBy = "employee")
+	private Set<Image> image;
+
+	@OneToMany(mappedBy = "employee")
+	private Set<JobExperience> jobExperience;
+
+
+
+
+
 
 }
