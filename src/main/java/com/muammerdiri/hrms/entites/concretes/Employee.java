@@ -46,8 +46,6 @@ public class Employee {
     @JoinColumn(name = "user_id")
 	private User user;
 
-	@OneToMany(mappedBy = "employee")
-	private Set<Cv> cv;
 
 	@OneToMany(mappedBy = "employee")
 	private Set<School> school;

@@ -39,8 +39,7 @@ public class School {
     @Column(name = "graduate_date")
     private LocalDate graduateDate;
 
-    @OneToMany(mappedBy = "school")
-    private Set<Cv> cv;
+
 
     @ManyToOne
     @JoinColumn(name = "employee_id")

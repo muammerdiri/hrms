@@ -27,8 +27,6 @@ public class Image {
     @Column(name = "created_date")
     private LocalDate createdDate;
 
-    @OneToMany(mappedBy = "image")
-    private Set<Cv> cv;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")

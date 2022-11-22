@@ -38,8 +38,7 @@ public class JobExperience {
     @JoinColumn(name = "job_position_id")
     private JobPosition jobPosition;
 
-    @OneToMany(mappedBy = "jobExperience")
-    private Set<Cv> cv;
+
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
