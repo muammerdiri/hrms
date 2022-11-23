@@ -4,6 +4,7 @@ import com.muammerdiri.hrms.business.responses.GetAllJobAdvertisementResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.entites.concretes.JobAdvertisement;
+import com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
@@ -13,4 +14,5 @@ public interface JobAdvertisementService {
     DataResult<List<GetAllJobAdvertisementResponse>> getAllByJobAdvertisementWithStatusTrue();
     DataResult<List<GetAllJobAdvertisementResponse>> findAllByLastDate(String date);
     Result add(JobAdvertisement jobAdvertisement);
+    DataResult<List<GetJobAdvertisementWithCityAndJobPositionDto>> getJobAdvertisementWithCityAndJobPositionDto();
 }

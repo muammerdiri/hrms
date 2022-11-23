@@ -47,20 +47,15 @@ public class Employee {
 	private User user;
 
 
-	@OneToMany(mappedBy = "employee")
-	private Set<School> school;
 
-	@OneToMany(mappedBy = "employee")
-	private  Set<ProgrammingTechnology> programmingTechnology;
 
-	@OneToMany(mappedBy = "employee")
-	private Set<Language> language;
 
-	@OneToMany(mappedBy = "employee")
-	private Set<Image> image;
 
-	@OneToMany(mappedBy = "employee")
-	private Set<JobExperience> jobExperience;
+
+
+
+
+
 
 
 

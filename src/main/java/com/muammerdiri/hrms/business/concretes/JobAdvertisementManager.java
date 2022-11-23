@@ -7,6 +7,7 @@ import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.core.utilities.results.SuccessDataResult;
 import com.muammerdiri.hrms.dataAccess.abstracts.JobAdvertisementRepository;
 import com.muammerdiri.hrms.entites.concretes.JobAdvertisement;
+import com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,5 +71,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     @Override
     public Result add(JobAdvertisement jobAdvertisement) {
         return null;
+    }
+
+    @Override
+    public DataResult<List<GetJobAdvertisementWithCityAndJobPositionDto>> getJobAdvertisementWithCityAndJobPositionDto() {
+        return new SuccessDataResult<>(jobAdvertisementRepository.getJobAdvertisementWithCityAndPosition(),"Data Listed");
     }
 }

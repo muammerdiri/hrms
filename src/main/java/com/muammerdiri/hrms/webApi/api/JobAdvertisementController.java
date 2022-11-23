@@ -3,6 +3,7 @@ package com.muammerdiri.hrms.webApi.api;
 import com.muammerdiri.hrms.business.abstracts.JobAdvertisementService;
 import com.muammerdiri.hrms.business.responses.GetAllJobAdvertisementResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
+import com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,10 @@ public class JobAdvertisementController {
     @GetMapping("/find-all-by-last-date")
     public DataResult<List<GetAllJobAdvertisementResponse>> findAllByLastDate(String date) {
         return jobAdvertisementService.findAllByLastDate(date);
+    }
+
+    @GetMapping("/getJobAdvertisementWithCityAndJobPositionDto")
+    public DataResult<List<GetJobAdvertisementWithCityAndJobPositionDto>> getJobAdvertisementWithCityAndJobPositionDto(){
+        return jobAdvertisementService.getJobAdvertisementWithCityAndJobPositionDto();
     }
 }

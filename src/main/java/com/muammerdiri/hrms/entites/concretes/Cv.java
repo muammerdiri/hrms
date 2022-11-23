@@ -5,28 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
+@Table(name="cvs")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "images")
-public class Image {
+public class Cv {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "image_name")
-    private String imageName;
-
-    @Column(name = "path")
-    private String path;
-
-    @Column(name = "created_date")
-    private LocalDate createdDate;
-
+    private String coverLetter;
 
 
 }
