@@ -19,8 +19,8 @@ public interface JobAdvertisementRepository extends JpaRepository<JobAdvertiseme
     @Query(value = "SELECT * FROM job_advertisements  ja WHERE ja.last_date >= :date AND status = true",nativeQuery = true)
     List<JobAdvertisement> findAllByLastDate(@Param("date") LocalDate date);
 
-    @Query(value = "Select new com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto (ja.title,jb.name,ja.numberOfPosition,ja.lastDate,ja.releaseDate,c.name)" +
-            " from JobAdvertisement ja inner join ja.city c INNER JOIN ja.jobPosition jb " )
+    @Query(value = "SELECT new com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto (ja.title,jb.name,ja.numberOfPosition,ja.lastDate,ja.releaseDate,c.name)" +
+            " FROM JobAdvertisement ja INNER JOIN ja.city c INNER JOIN ja.jobPosition jb " )
     List<GetJobAdvertisementWithCityAndJobPositionDto> getJobAdvertisementWithCityAndPosition();
 
 }
