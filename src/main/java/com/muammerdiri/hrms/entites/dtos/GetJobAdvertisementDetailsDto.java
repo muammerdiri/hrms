@@ -5,10 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class GetJobAdvertisementWithCityAndJobPositionDto {
+@NoArgsConstructor
+@Data
+public class GetJobAdvertisementDetailsDto {
     private String title;
     private String jobPosition;
     private short numberOfPosition;

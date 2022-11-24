@@ -8,21 +8,24 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Data
+@Table(name = "faculties")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "programming_languages")
 @Entity
-public class ProgrammingLanguage {
+public class Faculity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name ="name")
     private String name;
 
-    @OneToMany(mappedBy = "programmingLanguage")
-    private Set<ProgrammingTechnology> programmingTechnology;
+    @Column(name = "status")
+    private int status;
 
-
-
+    @OneToMany(mappedBy = "faculity")
+    private Set<Department> department;
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
 }

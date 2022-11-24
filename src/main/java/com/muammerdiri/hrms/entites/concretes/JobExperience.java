@@ -33,10 +33,12 @@ public class JobExperience {
     @Column(name = "finish_date")
     private LocalDate finishDate;
 
-
     @ManyToOne
     @JoinColumn(name = "job_position_id")
     private JobPosition jobPosition;
+
+    @OneToMany(mappedBy = "jobExperience")
+    private Set<Cv> cv;
 
 
 

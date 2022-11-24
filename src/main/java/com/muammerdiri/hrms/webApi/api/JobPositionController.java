@@ -2,6 +2,9 @@ package com.muammerdiri.hrms.webApi.api;
 
 import java.util.List;
 
+import com.muammerdiri.hrms.core.utilities.results.DataResult;
+import com.muammerdiri.hrms.core.utilities.results.Result;
+import com.muammerdiri.hrms.core.utilities.results.SuccessResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,12 +29,13 @@ public class JobPositionController {
 	}
 	
 	@PostMapping("/add")
-	public void add(CreateJobPositionRequest response) {
-		service.add(response);
+	public Result add(CreateJobPositionRequest response) {
+		;
+		return service.add(response);
 	}
 	
 	@GetMapping("/getall")
-	public List<GetJobPositionResponse> getAll(){
+	public DataResult<List<GetJobPositionResponse>> getAll(){
 		return service.getAll();
 	}
 	

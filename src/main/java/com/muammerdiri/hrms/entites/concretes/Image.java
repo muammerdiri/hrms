@@ -27,6 +27,9 @@ public class Image {
     @Column(name = "created_date")
     private LocalDate createdDate;
 
+    @OneToOne(mappedBy = "image")
+    private Cv cv;
+
 
 
 }

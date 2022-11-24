@@ -26,18 +26,11 @@ public class School {
     @Column(name = "name")
     private String name;
 
-    @NotNull
-    @NotBlank
-    @Column(name = "department")
-    private String department;
+    @Column(name = "status")
+    private int status;
 
-    @NotNull
-    @NotBlank
-    @Column(name = "enter_date")
-    private LocalDate enterDate;
-
-    @Column(name = "graduate_date")
-    private LocalDate graduateDate;
+    @OneToMany(mappedBy = "school")
+    private Set<Faculity> faculity;
 
 
 

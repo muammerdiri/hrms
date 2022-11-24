@@ -1,18 +1,14 @@
 package com.muammerdiri.hrms.business.abstracts;
 
-import com.muammerdiri.hrms.business.responses.GetAllJobAdvertisementResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.entites.concretes.JobAdvertisement;
-import com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementWithCityAndJobPositionDto;
-import org.springframework.data.repository.query.Param;
+import com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementDetailsDto;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface JobAdvertisementService {
-    DataResult<List<GetAllJobAdvertisementResponse>> getAllByJobAdvertisementWithStatusTrue();
-    DataResult<List<GetAllJobAdvertisementResponse>> findAllByLastDate(String date);
+    DataResult<List<GetJobAdvertisementDetailsDto>> findAllByLastDate(String date);
     Result add(JobAdvertisement jobAdvertisement);
-    DataResult<List<GetJobAdvertisementWithCityAndJobPositionDto>> getJobAdvertisementWithCityAndJobPositionDto();
+    DataResult<List<GetJobAdvertisementDetailsDto>> getJobAdvertisementWithCityAndJobPositionDto();
 }

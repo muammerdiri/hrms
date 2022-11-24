@@ -23,8 +23,8 @@ public class ProgrammingTechnology {
     @JoinColumn(name = "programming_language_id")
     private ProgrammingLanguage programmingLanguage;
 
-
-
+    @OneToMany(mappedBy = "programmingTechnology")
+    private Set<Cv> cv;
 
 
 }

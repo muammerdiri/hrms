@@ -22,7 +22,10 @@ public class Language {
     private String name;
 
     @Column(name = "level")
-    private short level;
+    private int level;
+
+    @OneToMany(mappedBy = "language")
+    private Set<Cv> cv;
 
 
 

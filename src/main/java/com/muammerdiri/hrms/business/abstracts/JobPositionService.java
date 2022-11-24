@@ -5,10 +5,12 @@ import java.util.List;
 import com.muammerdiri.hrms.business.requests.CreateJobPositionRequest;
 import com.muammerdiri.hrms.business.requests.UpdateJobPositionRequest;
 import com.muammerdiri.hrms.business.responses.GetJobPositionResponse;
+import com.muammerdiri.hrms.core.utilities.results.DataResult;
+import com.muammerdiri.hrms.core.utilities.results.Result;
 
 public interface JobPositionService {
-	void add(CreateJobPositionRequest jobPositionResponse);
-	void delete(int id);
-	void update(int id,UpdateJobPositionRequest jobPositionResponse);
-	List<GetJobPositionResponse> getAll();
+	Result add(CreateJobPositionRequest jobPositionResponse);
+	Result delete(int id);
+	Result update(int id,UpdateJobPositionRequest jobPositionResponse);
+	DataResult<List<GetJobPositionResponse>> getAll();
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name="departments")
+@Table(name="departments") 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +18,20 @@ public class Department {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "time")
+    private int time;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "status")
+    private int status;
+
+    @ManyToOne
+    @JoinColumn(name = "faculity_id")
+    private Faculity faculity;
+
 
 
 }
