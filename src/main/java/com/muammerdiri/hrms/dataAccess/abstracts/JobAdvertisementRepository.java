@@ -15,9 +15,11 @@ public interface JobAdvertisementRepository extends JpaRepository<JobAdvertiseme
             "FROM JobAdvertisement ja INNER JOIN ja.city c INNER JOIN ja.jobPosition jb  WHERE ja.lastDate>=:date and ja.status = true ")
     List<GetJobAdvertisementDetailsDto> findAllByLastDate(@Param("date") LocalDate date);
 
+
     @Query(value = "Select new com.muammerdiri.hrms.entites.dtos.GetJobAdvertisementDetailsDto (ja.title,jb.name,ja.numberOfPosition,ja.lastDate,ja.releaseDate,c.name)" +
             " from JobAdvertisement ja inner join ja.city c INNER JOIN ja.jobPosition jb " )
     List<GetJobAdvertisementDetailsDto> getJobAdvertisementWithCityAndPosition();
+
 
 
 
