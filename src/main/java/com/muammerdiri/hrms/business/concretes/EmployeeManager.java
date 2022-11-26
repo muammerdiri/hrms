@@ -30,23 +30,6 @@ public class EmployeeManager implements EmployeeService {
     @Override
     public DataResult<List<GetEmployeeDetailDto>> getAll() {
 
-//        List<Employee> employees = employeeRepository.findAll();
-//        List<GetAllEmployeeResponse> getAllEmployeeResponses = new ArrayList<>();
-//
-//        for (Employee employee:employees){
-//            GetAllEmployeeResponse getAllEmployeeResponse = new GetAllEmployeeResponse();
-//
-//            getAllEmployeeResponse.setId(employee.getId());
-//            getAllEmployeeResponse.setEmail(employee.getUser().getEmail());
-//            getAllEmployeeResponse.setFirstName(employee.getFirstName());
-//            getAllEmployeeResponse.setLastName(employee.getLastName());
-//            getAllEmployeeResponse.setDateOfBirth(employee.getDateOfBirth());
-//            getAllEmployeeResponse.setIdentityNumber(employee.getIdentityNumber());
-//
-//            getAllEmployeeResponses.add(getAllEmployeeResponse);
-//        }
-
-
         return new SuccessDataResult<>(employeeRepository.getAll(),"Employee data listed.");
     }
 
