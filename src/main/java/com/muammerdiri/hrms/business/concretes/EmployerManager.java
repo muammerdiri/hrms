@@ -8,6 +8,7 @@ import com.muammerdiri.hrms.core.utilities.results.*;
 import com.muammerdiri.hrms.dataAccess.abstracts.EmployerRepository;
 import com.muammerdiri.hrms.dataAccess.abstracts.UserRepository;
 import com.muammerdiri.hrms.entites.concretes.Employer;
+import com.muammerdiri.hrms.entites.dtos.GetEmployerDetailDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,34 +18,18 @@ import java.util.List;
 public class EmployerManager implements EmployerService {
 
     private EmployerRepository employerRepository;
-    private UserService userService;
+
 
 
     @Autowired
-    public EmployerManager(EmployerRepository employerRepository,UserService userService) {
+    public EmployerManager(EmployerRepository employerRepository ) {
         this.employerRepository = employerRepository;
-        this.userService = userService;
+
     }
 
     @Override
-    public DataResult<List<GetAllEmployerResponse>> getAll() {
-
-        List<Employer> employers = employerRepository.findAll();
-        List<GetAllEmployerResponse> getAllEmployerResponses = new ArrayList<>();
-        for (Employer employer:employers){
-            GetAllEmployerResponse getAllEmployerResponse = new GetAllEmployerResponse();
-
-            getAllEmployerResponse.setId(employer.getId());
-            getAllEmployerResponse.setWebsite(employer.getWebsite());
-            getAllEmployerResponse.setEmail(employer.getUser().getEmail());
-            getAllEmployerResponse.setCompanyName(employer.getCompanyName());
-            getAllEmployerResponse.setPhoneNumber(employer.getPhoneNumber());
-
-            getAllEmployerResponses.add(getAllEmployerResponse);
-        }
-
-
-        return new SuccessDataResult<>(getAllEmployerResponses,"Employer data listed.");
+    public DataResult<List<GetEmployerDetailDto>> getAll() {
+                return new SuccessDataResult<>(employerRepository.getAll(),"Employer data listed.");
     }
 
     @Override
@@ -54,12 +39,4 @@ public class EmployerManager implements EmployerService {
         return new SuccessResult("Employer is saved");
     }
 
-    private boolean userVerify(List<User> users,String email){
-        boolean result=false;
-        for (User user: users){
-            if(user.getEmail().equals(email))
-                result=true;
-        }
-        return result;
-    }
 }
