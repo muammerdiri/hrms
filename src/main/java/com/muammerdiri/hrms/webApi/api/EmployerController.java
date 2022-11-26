@@ -5,6 +5,7 @@ import com.muammerdiri.hrms.business.responses.GetAllEmployerResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.entites.concretes.Employer;
+import com.muammerdiri.hrms.entites.dtos.GetEmployerDetailDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ public class EmployerController {
 
 
     @GetMapping("/getall")
-    public DataResult<List<GetAllEmployerResponse>> getAll(){
+    public DataResult<List<GetEmployerDetailDto>> getAll(){
         return employerService.getAll();
     }
 
