@@ -12,7 +12,7 @@ import java.util.List;
 public interface CvRepository extends JpaRepository<Cv,Integer> {
 
     @Query(value = "SELECT new com.muammerdiri.hrms.entites.dtos.GetCvDetailDto" +
-            "(cv.coverLetter, cv.githubAccount,cv.linkedInAccount,e.school.name, " +
+            "(cv.coverLetter, cv.githubAccount,cv.linkedInAccount,e.department.faculity.school.name, " +
             "e.department.name,e.dateOfEntry,e.graduateDate,je.companyName,je.enterDate," +
             "je.finishDate,je.jobPosition.name,i.path,pt.name,pt.programmingLanguage.name,l.name,l.level) " +
             "from Cv cv INNER JOIN cv.education e INNER JOIN cv.jobExperience je INNER JOIN cv.image i INNER JOIN cv.programmingTechnology pt INNER JOIN cv.language l")

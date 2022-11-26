@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface EmployerService {
     DataResult<List<GetAllEmployerResponse>> getAll();
-    Result save(Employer employer,String email,String password);
+    Result save(Employer employer);
 }

@@ -32,6 +32,9 @@ public class School {
     @OneToMany(mappedBy = "school")
     private Set<Faculity> faculity;
 
+    @OneToMany(mappedBy = "faculity")
+    private Set<Education> education;
+
 
 
 }

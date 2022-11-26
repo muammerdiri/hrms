@@ -48,20 +48,9 @@ public class EmployerManager implements EmployerService {
     }
 
     @Override
-    public Result save(Employer employer, String email, String password) {
-        List<User> users = userService.getAll();
+    public Result save(Employer employer) {
 
-        if(userVerify(users,email))
-            return new ErrorResult("Email repetition has occurred. Enter a different email.");
-
-        User user = new User();
-        user.setEmail(email);
-        user.setPassword(password);
-        userService.add(user);
-
-        employer.setUser(user);
         employerRepository.save(employer);
-
         return new SuccessResult("Employer is saved");
     }
 

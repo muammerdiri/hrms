@@ -31,8 +31,7 @@ public class EmployerController {
     }
 
     @PostMapping("/save")
-    public Result save(Employer employer,String email,String password){
-        return  employerService.save(employer,email,password);
+    public Result save(Employer employer){
+        return  employerService.save(employer);
     }
-
 }

@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.muammerdiri.hrms.entites.concretes.Employee;
@@ -34,11 +36,13 @@ public class User {
 	private int id;
 	
 	@NotNull
-	@UniqueElements
+	@Email
+	@NotBlank
 	@Column(name = "email")
 	private String email;
 	
 	@NotNull
+	@NotBlank
 	@Column(name="password")
 	private String password;
 	

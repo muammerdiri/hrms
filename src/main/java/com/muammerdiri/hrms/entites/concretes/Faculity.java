@@ -28,4 +28,8 @@ public class Faculity {
     @ManyToOne
     @JoinColumn(name = "school_id")
     private School school;
+
+    @OneToMany(mappedBy = "faculity")
+    private Set<Education> education;
+
 }
