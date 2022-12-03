@@ -9,8 +9,7 @@ import com.muammerdiri.hrms.core.concretes.User;
 import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
 
-import java.util.List;
-import java.util.Set;
+
 
 
 @Entity

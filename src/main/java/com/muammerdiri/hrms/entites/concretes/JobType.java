@@ -1,28 +1,27 @@
 package com.muammerdiri.hrms.entites.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name="departments")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Department {
+@Table(name = "job_type")
+public class JobType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "name")
-    private String name;
+    private String typeName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school_id")
-    @JsonIgnore
-    private School school;
+    @OneToMany(mappedBy = "jobType")
+    private Set<JobAdvertisement> jobAdvertisement;
+
 
 }

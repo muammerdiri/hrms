@@ -1,7 +1,6 @@
 package com.muammerdiri.hrms.webApi.api;
 
 import com.muammerdiri.hrms.business.abstracts.EmployerService;
-import com.muammerdiri.hrms.business.responses.GetAllEmployerResponse;
 import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.Result;
 import com.muammerdiri.hrms.entites.concretes.Employer;

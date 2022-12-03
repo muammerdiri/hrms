@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
-import java.util.Set;
 
 
 @Entity
@@ -28,19 +30,16 @@ public class Education {
     @Column(name = "graduate_date")
     private LocalDate graduateDate;
 
-    @OneToMany(mappedBy = "education")
-    private Set<Cv> cv;
+//    @OneToMany(mappedBy = "education")
+//    private Set<Cv> cv;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
+    @JsonIgnore
     private Department department;
 
-    @ManyToOne
-    @JoinColumn(name = "faculity_id")
-    private Faculity faculity;
 
-    @ManyToOne
-    @JoinColumn(name = "school_id")
-    private School school;
+
+
 
 }

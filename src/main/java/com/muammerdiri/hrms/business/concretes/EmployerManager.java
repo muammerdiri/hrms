@@ -1,18 +1,15 @@
 package com.muammerdiri.hrms.business.concretes;
 
 import com.muammerdiri.hrms.business.abstracts.EmployerService;
-import com.muammerdiri.hrms.business.abstracts.UserService;
-import com.muammerdiri.hrms.business.responses.GetAllEmployerResponse;
-import com.muammerdiri.hrms.core.concretes.User;
+
 import com.muammerdiri.hrms.core.utilities.results.*;
 import com.muammerdiri.hrms.dataAccess.abstracts.EmployerRepository;
-import com.muammerdiri.hrms.dataAccess.abstracts.UserRepository;
 import com.muammerdiri.hrms.entites.concretes.Employer;
 import com.muammerdiri.hrms.entites.dtos.GetEmployerDetailDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 @Service
 public class EmployerManager implements EmployerService {

@@ -2,10 +2,8 @@ package com.muammerdiri.hrms.webApi.api;
 
 import com.muammerdiri.hrms.business.abstracts.UserService;
 import com.muammerdiri.hrms.core.concretes.User;
-import com.muammerdiri.hrms.core.utilities.results.DataResult;
 import com.muammerdiri.hrms.core.utilities.results.ErrorDataResult;
-import com.muammerdiri.hrms.core.utilities.results.Result;
-import com.muammerdiri.hrms.core.utilities.results.SuccessResult;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class GetJobAdvertisementDetailsDto {
     private String title;
     private String jobPosition;
+    private String jobType;
     private short numberOfPosition;
     private LocalDate lastDate;
     private LocalDate releaseDate;

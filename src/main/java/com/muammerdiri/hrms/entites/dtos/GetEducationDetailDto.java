@@ -14,7 +14,6 @@ public class GetEducationDetailDto {
 
     private int id;
     private String schoolName;
-    private String facultyName;
     private String departmentName;
     private float score;
     private LocalDate dateOfEntry;

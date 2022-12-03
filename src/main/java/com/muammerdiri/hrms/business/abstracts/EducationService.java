@@ -10,5 +10,6 @@ import java.util.List;
 
 public interface EducationService {
     DataResult<List<GetEducationDetailDto>> getEducationByGraduateDate();
-
+    Result save(CreateEducationDto createEducationDto);
+    Education findById(int id); 
 }

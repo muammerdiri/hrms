@@ -4,37 +4,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.Set;
 
-@Data
+import javax.persistence.*;
+
 @Entity
+@Table(name="schools")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "schools")
 public class School {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
-    @NotBlank
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "status")
-    private int status;
-
+    @Column(name = "school_name")
+    private String schoolName;
+    
     @OneToMany(mappedBy = "school")
-    private Set<Faculity> faculity;
-
-    @OneToMany(mappedBy = "faculity")
-    private Set<Education> education;
-
+    private Set<Department> department;
 
 
 }
