@@ -10,6 +10,7 @@ import java.util.List;
 public interface EmployeeService {
     DataResult<List<GetEmployeeDetailDto>> getAll();
     Result save(Employee employee) throws Exception;
+    Employee findById(int id);
 
 
 

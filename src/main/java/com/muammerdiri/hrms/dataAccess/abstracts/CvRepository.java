@@ -12,13 +12,21 @@ import java.util.List;
 public interface CvRepository extends JpaRepository<Cv,Integer> {
 
     @Query(value = "SELECT new com.muammerdiri.hrms.entites.dtos.GetCvDetailDto" +
-            "(cv.coverLetter, cv.githubAccount,cv.linkedInAccount,e.department.school.schoolName, " +
+            "(cv.coverLetter, cv.githubAccount,cv.linkedInAccount, em.firstName, em.LastName, em.dateOfBirth , e.department.school.schoolName, " +
             "e.department.name,e.dateOfEntry,e.graduateDate,je.companyName,je.enterDate," +
             "je.finishDate,je.jobPosition.name,i.path,pt.name,pt.programmingLanguage.name,l.name,l.level) " +
-            "from Cv cv INNER JOIN cv.education e INNER JOIN cv.jobExperience je INNER JOIN cv.image i INNER JOIN cv.programmingTechnology pt INNER JOIN cv.language l")
+            "from Cv cv INNER JOIN cv.employee em INNER JOIN cv.education e INNER JOIN cv.jobExperience je INNER JOIN cv.image i INNER JOIN cv.programmingTechnology pt INNER JOIN cv.language l")
     List<GetCvDetailDto> getAll();
 
+	
+    @Query(value = "SELECT new com.muammerdiri.hrms.entites.dtos.GetCvDetailDto" +
+            "(cv.coverLetter, cv.githubAccount,cv.linkedInAccount, em.firstName, em.LastName, em.dateOfBirth , e.department.school.schoolName, " +
+            "e.department.name,e.dateOfEntry,e.graduateDate,je.companyName,je.enterDate," +
+            "je.finishDate,je.jobPosition.name,i.path,pt.name,pt.programmingLanguage.name,l.name,l.level) " +
+            "from Cv cv INNER JOIN cv.employee em INNER JOIN cv.education e INNER JOIN cv.jobExperience je INNER JOIN cv.image i INNER JOIN cv.programmingTechnology pt INNER JOIN cv.language l "
+            + "Where em.id = :id")
+    List<GetCvDetailDto> findByEmployeeId(int id);
 
-    @Query(value = "SELECT * from Cv cv ",nativeQuery = true)
-    List<Cv> getList();
+
+    
 }

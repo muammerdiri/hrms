@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 @Service
 public class EmployeeManager implements EmployeeService {
 
@@ -43,6 +44,15 @@ public class EmployeeManager implements EmployeeService {
         employeeRepository.save(employee);
         return new SuccessResult("Employee saved.");
     }
+
+	@Override
+	public Employee findById(int id) {
+		
+		Optional<Employee> foundEmployee=employeeRepository.findById(id);
+		Employee employee = foundEmployee.get();
+		
+		return employee;
+	}
 
 
 

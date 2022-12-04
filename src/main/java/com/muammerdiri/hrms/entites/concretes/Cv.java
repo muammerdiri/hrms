@@ -25,6 +25,9 @@ public class Cv {
     @Column(name = "linkedin_account")
     private String linkedInAccount;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "education_id")

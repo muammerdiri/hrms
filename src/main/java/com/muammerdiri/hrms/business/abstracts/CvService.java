@@ -10,4 +10,5 @@ import java.util.List;
 public interface CvService {
     DataResult<List<GetCvDetailDto>> getAll();
 	Result save(CreateCvDto createCvDto);
+	DataResult<List<GetCvDetailDto>> getListbyUserId(int userId);
 }

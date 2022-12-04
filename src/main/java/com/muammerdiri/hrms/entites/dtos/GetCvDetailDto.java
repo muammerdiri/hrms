@@ -13,6 +13,13 @@ public class GetCvDetailDto {
     private String coverLetter;
     private String githubAccount;
     private String linkedInAccount;
+    
+    //Employee
+    private String firstName;
+    private String lastName;
+    private int dateOfBirth;
+
+    
 
     //Education
     private String educationSchoolName;
@@ -35,6 +42,8 @@ public class GetCvDetailDto {
 //    //Language
     private String languageName;
     private int languageLevel;
+    
+    
 
 
 

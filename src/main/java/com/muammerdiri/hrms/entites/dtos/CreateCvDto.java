@@ -13,6 +13,7 @@ public class CreateCvDto {
 	private String coverLetter;
 	private String githubAccount;
 	private String linkedInAccount;
+	private int employeeId;
 	private int educationId;
 	private int jobExperienceId;
 	private int languageId;
